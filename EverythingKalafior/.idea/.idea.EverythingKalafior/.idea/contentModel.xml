@@ -4,9 +4,49 @@
     <e p="C:\Users\piotr\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\piotr\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_EverythingKalafior.1076301271.00" t="ExcludeRecursive" />
     <e p="E:\gry\everythingiskalafior\EverythingKalafior" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AnimationImporter" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AnimationAssetPostProcessor.cs" t="Include" />
+            <e p="AnimationImporter.cs" t="Include" />
+            <e p="AnimationImporterWindow.cs" t="Include" />
+            <e p="AnimationImportJob.cs" t="Include" />
+            <e p="Aseprite" t="Include">
+              <e p="AsepriteImporter.cs" t="Include" />
+            </e>
+            <e p="Config" t="Include">
+              <e p="AnimationImporterSharedConfig.cs" t="Include" />
+              <e p="AnimationImporterSharedConfigEditor.cs" t="Include" />
+              <e p="AnimationTargetObjectType.cs" t="Include" />
+              <e p="AssetTargetLocation.cs" t="Include" />
+              <e p="AssetTargetLocationType.cs" t="Include" />
+              <e p="ImportAnimatorController.cs" t="Include" />
+              <e p="PreviousImportSettings.cs" t="Include" />
+              <e p="SpriteNaming.cs" t="Include" />
+            </e>
+            <e p="IAnimationImporterPlugin.cs" t="Include" />
+            <e p="ImportedData" t="Include">
+              <e p="ImportedAnimation.cs" t="Include" />
+              <e p="ImportedAnimationFrame.cs" t="Include" />
+              <e p="ImportedAnimationSheet.cs" t="Include" />
+            </e>
+            <e p="PyxelEdit" t="Include">
+              <e p="Ionic.Zip.dll-readme.txt" t="Include" />
+              <e p="PyxelEditData.cs" t="Include" />
+              <e p="PyxelEditImporter.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="AnimationClipUtility.cs" t="Include" />
+              <e p="AssetDatabaseUtility.cs" t="Include" />
+              <e p="JSONObject.cs" t="Include" />
+              <e p="ScriptableObjectUtility.cs" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="GGEZ" t="Include">
             <e p="PerfectPixelCamera" t="Include">
