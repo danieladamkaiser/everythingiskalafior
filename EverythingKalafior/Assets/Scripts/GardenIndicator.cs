@@ -9,7 +9,7 @@ public class    GardenIndicator : MonoBehaviour
     public Garden garden;
     private GardenTile tile;
     private Vector2Int position = Vector2Int.zero;
-    
+    public GameObject cauliflower;
     void Start() {
         Debug.Log("Start");
 
@@ -23,7 +23,7 @@ public class    GardenIndicator : MonoBehaviour
     }
 
     void TryToMove() {
-        var offset = Controlls.TileMoves();
+        var offset = GardenControlls.TileMoves();
         if (offset == Vector2.zero) {
             return;
         }
@@ -40,8 +40,15 @@ public class    GardenIndicator : MonoBehaviour
         position += offset;
     }
 
-    // Update is called once per frame
+    bool CanPlant() {
+        return !tile.GetCauliflower();
+    }
+    
     void Update() {
         TryToMove();
+
+        if (GardenControlls.PlantAction() && CanPlant()) {
+            tile.PlantCauliflower(Instantiate(cauliflower).GetComponent<Cauliflower>());
+        }
     }
 }

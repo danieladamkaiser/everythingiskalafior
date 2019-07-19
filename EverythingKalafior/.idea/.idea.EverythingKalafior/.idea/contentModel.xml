@@ -63,11 +63,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Controlls.cs" t="Include" />
+          <e p="Cauliflower.cs" t="Include" />
           <e p="Enums" t="Include">
             <e p="KeyStatus.cs" t="Include" />
           </e>
           <e p="Garden.cs" t="Include" />
+          <e p="GardenController.cs" t="Include" />
+          <e p="GardenControlls.cs" t="Include" />
           <e p="GardenIndicator.cs" t="Include" />
           <e p="GardenTile.cs" t="Include" />
           <e p="Interfaces" t="Include">
@@ -79,6 +81,7 @@
             <e p="Keys.cs" t="Include" />
             <e p="PlayerConfig.cs" t="Include" />
           </e>
+          <e p="Utils.cs" t="Include" />
         </e>
       </e>
       <e p="EverythingKalafior.sln" t="IncludeFlat" />

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Controlls {
+public class GardenControlls {
     public static Vector2Int TileMoves() {
         Vector2Int vec = Vector2Int.zero;
         if (Input.GetKeyDown("w")) {
@@ -17,5 +17,9 @@ public class Controlls {
         }
 
         return vec;
+    }
+
+    public static bool PlantAction() {
+        return Input.GetKeyDown("space");
     }
 }
