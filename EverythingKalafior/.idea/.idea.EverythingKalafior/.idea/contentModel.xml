@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\piotr\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\piotr\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_EverythingKalafior.1076301271.00" t="ExcludeRecursive" />
+    <e p="E:\gry\everythingiskalafior\EverythingKalafior" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="GGEZ" t="Include">
+            <e p="PerfectPixelCamera" t="Include">
+              <e p="Demo" t="Include">
+                <e p="Assets" t="Include">
+                  <e p="ZoomDemo.cs" t="Include" />
+                </e>
+              </e>
+              <e p="README.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="PerfectPixelCamera.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Controlls.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="KeyStatus.cs" t="Include" />
+          </e>
+          <e p="Garden.cs" t="Include" />
+          <e p="GardenIndicator.cs" t="Include" />
+          <e p="GardenTile.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IInput.cs" t="Include" />
+            <e p="IPlayerController.cs" t="Include" />
+          </e>
+          <e p="PlayerController.cs" t="Include" />
+          <e p="Serializable" t="Include">
+            <e p="Keys.cs" t="Include" />
+            <e p="PlayerConfig.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="EverythingKalafior.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
