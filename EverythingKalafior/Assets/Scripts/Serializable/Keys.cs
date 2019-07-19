@@ -7,6 +7,7 @@ namespace Assets.Scripts.Serializable
     public class Keys
     {
         public KeyCode Jump;
+        public KeyCode Die;
         public KeyCode[] Actions;
     }
 }

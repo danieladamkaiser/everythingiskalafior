@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.Enums
 {
-    enum KeyStatus
+    public enum KeyStatus
     {
         JustUp,
         Up,
