@@ -1,48 +1,118 @@
-﻿using Assets.Scripts.Interfaces;
+﻿using Assets.Scripts;
+using Assets.Scripts.Enums;
+using Assets.Scripts.Interfaces;
 using Assets.Scripts.Serializable;
 using UnityEngine;
+using System.Linq;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
-public class PlayerController : MonoBehaviour, IPlayerController
+namespace Assets.Scripts
 {
-    public Keys Keys;
-    public PlayerConfig PlayerConfig;
-
-    private Rigidbody2D rb;
-    private BoxCollider2D col;
-    private IInput input;
-    private bool IsActive;
-
-    public void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(BoxCollider2D))]
+    public class PlayerController : MonoBehaviour, IPlayerController
     {
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
-    }
+        public Keys Keys;
+        public PlayerConfig PlayerConfig;
 
-    public void Freeze()
-    {
-    }
+        private Rigidbody2D rb;
+        private BoxCollider2D col;
+        private IInput input;
+        private bool IsActive = true;
+        private float playerSpeed;
+        private bool canJump;
+        private float jumpTolerance = 0.01f;
 
-    public void Jump()
-    {
-    }
+        public void Awake()
+        {
+            playerSpeed = PlayerConfig.MoveSpeed;
+            input = new KeyboardInput();
 
-    public void Walk(Vector2 direction)
-    {
-    }
+            rb = GetComponent<Rigidbody2D>();
+            col = GetComponent<BoxCollider2D>();
+        }
 
-    void Start()
-    {
-    }
+        public void Die()
+        {
+            IsActive = false;
+        }
 
-    void Update()
-    {
-        
-    }
+        public void Jump()
+        {
+            if (canJump)
+            {
+                rb.velocity += new Vector2(0, PlayerConfig.JumpForce);
+                canJump = false;
+            }
+        }
 
-    private void Move()
-    {
-        Walk(new Vector2(input.GetHorizontalAxisValue(), 0));
+        public void Walk(float direction)
+        {
+            float horizontalVelocity = rb.velocity.x;
+            if (Mathf.Abs(horizontalVelocity) <= playerSpeed || (horizontalVelocity < 0 && direction > 0) || (horizontalVelocity > 0 && direction < 0))
+            {
+                if (canJump)
+                {
+                    rb.velocity = new Vector2(direction * playerSpeed, rb.velocity.y);
+                }
+                else
+                {
+                    float adjustedHorizontalVelocity = Mathf.Clamp(rb.velocity.x + direction * playerSpeed * 0.2f, -playerSpeed, playerSpeed);
+                    rb.velocity = new Vector2(adjustedHorizontalVelocity,rb.velocity.y);
+                }
+            }
+        }
+
+        void Start()
+        {
+        }
+
+        void Update()
+        {
+            if (IsActive)
+            {
+                Move();
+            }
+        }
+
+        private void Move()
+        {
+            Walk(input.GetHorizontalAxisValue());
+
+            if (input.GetKeyStatus(Keys.Jump) == KeyStatus.JustDown)
+            {
+                Jump();
+            }
+
+            if (input.GetKeyStatus(Keys.Die) == KeyStatus.JustDown)
+            {
+                Die();
+            }
+        }
+
+        void OnCollisionStay2D(Collision2D collision)
+        {
+            var highestCollisionYPosition = collision.contacts.Max(a => a.point.y);
+            var lowestBoundsYPosition = col.bounds.min.y;
+            if (highestCollisionYPosition - jumpTolerance < lowestBoundsYPosition && highestCollisionYPosition + jumpTolerance > lowestBoundsYPosition)
+            {
+                canJump = true;
+            }
+
+            if (!IsActive && collision.contacts.Min(c => c.point.y) < col.bounds.min.y + jumpTolerance)
+            {
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                col.enabled = false;
+            }
+        }
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            if (rb.velocity.y+jumpTolerance>0 && rb.velocity.y-jumpTolerance<0)
+            canJump = false;
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Scripts.Enums;
+using Assets.Scripts.Interfaces;
+using System;
 
 namespace Assets.Scripts.Serializable
 {
@@ -7,5 +9,6 @@ namespace Assets.Scripts.Serializable
     {
         public float MoveSpeed;
         public float JumpForce;
+        public InputType inputType;
     }
 }

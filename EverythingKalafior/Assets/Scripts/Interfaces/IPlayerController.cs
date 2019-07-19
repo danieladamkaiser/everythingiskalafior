@@ -4,8 +4,8 @@ namespace Assets.Scripts.Interfaces
 {
     interface IPlayerController
     {
-        void Walk(Vector2 direction);
+        void Walk(float direction);
         void Jump();
-        void Freeze();
+        void Die();
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Interfaces
 {
-    interface IInput
+    public interface IInput
     {
         float GetHorizontalAxisValue();
         float GetVerticalAxisValue();
