@@ -1,28 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Cauliflower : MonoBehaviour {
     public float growTime = 10f;
     private Animator anim;
     private float currentGrowTime = 0;
 
-    string AnimName() {
-        var info = anim.GetCurrentAnimatorClipInfo(0);
-        return info[0].clip.name;    
-    }
-
-    void Start() {
+    void Awake() {
         anim = GetComponent<Animator>();
-        anim.speed = 0f;
-        anim.Play(AnimName(), 0, 0);
     }
 
     void UpdateAnim() {
-        var state = Utils.Remap(Mathf.Min(currentGrowTime, growTime), 0, growTime, 0, 0.9999f);
-        anim.Play(AnimName(), 0, state);
+        if (growTime >= currentGrowTime) {
+            var state = Utils.Remap(Mathf.Min(currentGrowTime, growTime), 0, growTime, 0, 0.9999f);
+            anim.Play("GROW_NORMIK", 0, state);
+        } else {
+            anim.Play("grown-up");
+            anim.enabled = true;
+        }
     }
 
     public void Grow() {
         currentGrowTime += Time.deltaTime;
         UpdateAnim();
+    }
+
+    public bool IsGrownUp() {
+        return currentGrowTime > growTime;
     }
 }

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 3389143481609980878, guid: b3b6d2d0c327477458278b846ec5db57,
     type: 3}
-  GardenPrefab: {fileID: 2680752850368715329, guid: 0bccd6de307e423488a6f456327c2988,
+  GardenPrefab: {fileID: 4975931058197266167, guid: 41275b5e6e7e6674fbe0406b5c9b4d6a,
     type: 3}
   PlaygroundPrefab: {fileID: 2472779836177613790, guid: c71ba40a6008ded4e96b0841e92888a9,
     type: 3}
