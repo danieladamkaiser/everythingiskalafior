@@ -76,7 +76,7 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (isActive)
+            if (isActive && GameController.GetInstance().isCameraMinimized)
             {
                 Move();
             } 
