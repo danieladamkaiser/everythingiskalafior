@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Runtime.CompilerServices;
+using UnityEditorInternal;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
@@ -22,8 +24,11 @@ namespace Assets.Scripts
 
         private GameObject player;
 
-        void Awake()
-        {
+        private static GameController instance;
+
+        void Awake() {
+            instance = this;
+            
             aspectRatio = Screen.width * 1f / Screen.height;
             var garden = Instantiate(GardenPrefab, new Vector3(-100, 0, -1), Quaternion.identity);
             gardenCameraController = garden.GetComponent<CameraController>();
@@ -34,6 +39,14 @@ namespace Assets.Scripts
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
+        }
+
+        public static GameController GetInstance() {
+            return instance;
+        }
+
+        public Vector3 GetCamPos() {
+            return playground.transform.position;
         }
 
         void Start()
@@ -72,7 +85,7 @@ namespace Assets.Scripts
             isCameraMinimized = false;
         }
 
-        private void MinimizeCamera()
+        public void MinimizeCamera()
         {
             gardenCameraController.ResizeCamera(new Vector2(0.02f, 0.75f), new Vector2(0.2f / aspectRatio, 0.2f));
             isCameraMinimized = true;
