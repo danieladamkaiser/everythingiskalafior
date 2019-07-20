@@ -2,6 +2,7 @@
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -16,6 +17,7 @@ namespace Assets.Scripts
         public bool isCameraMinimized;
         public BoxCollider2D SafetyCollider;
         public GameObject Player;
+        public TextMeshProUGUI tmp;
 
         private int currentLevel = 0;
         private CameraController gardenCameraController;
@@ -45,6 +47,7 @@ namespace Assets.Scripts
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
+            tmp = GameObject.Find("SeedCounter").GetComponent<TextMeshProUGUI>();
         }
 
         public static GameController GetInstance()
@@ -65,6 +68,8 @@ namespace Assets.Scripts
 
         void Update()
         {
+            tmp.text = Seeds.Count().ToString();
+
             if (levelStart==null || levelEnd == null)
             {
                 FindStartAndEnd();
