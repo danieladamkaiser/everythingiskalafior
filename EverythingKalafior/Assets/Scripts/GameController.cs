@@ -49,7 +49,7 @@ namespace Assets.Scripts
         }
 
         public Vector3 GetCamPos() {
-            return playground.transform.position;
+            return new Vector3(2.049694f, -0.9102125f, -8.80652f);
         }
 
         void Start()
@@ -73,9 +73,9 @@ namespace Assets.Scripts
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                player?.GetComponent<PlayerController>().OnNewCauliflower(player);
+                player?.GetComponent<PlayerController>().OnNewCauliflower(null);
                 SpawnPlayer();
-                OnNewCauliflower(player);
+                //OnNewCauliflower(player);
                 isCarried = true;
             }
 
@@ -130,9 +130,9 @@ namespace Assets.Scripts
             levelEnd = GameObject.Find("end").transform;
         }
 
-        public void OnNewCauliflower(GameObject cauliflower)
+        public void OnNewCauliflower(Cauliflower cauliflower)
         {
-            player = cauliflower;
+            player = cauliflower.gameObject;
             isCarried = true;
             playerRB = player.GetComponent<Rigidbody2D>();
         }

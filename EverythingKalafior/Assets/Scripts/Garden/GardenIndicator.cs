@@ -11,7 +11,6 @@ public class GardenIndicator : MonoBehaviour
     private GardenTile tile;
     private Vector2Int position = Vector2Int.zero;
     public GameObject cauliflowerPrefab;
-    public GameObject floatingPrefab;
     private SpriteRenderer sRenderer;
     
     public void TurnOff() {
@@ -27,14 +26,8 @@ public class GardenIndicator : MonoBehaviour
     }
 
     private void CreateFloatingIndicator(Cauliflower cf) {
-        var floating = Instantiate(floatingPrefab);
-        var f = floating.GetComponent<FloatingIndicator>();
-
-        floating.transform.position = GameController.GetInstance().GetCamPos() + Vector3.forward;
         GameController.GetInstance().MinimizeCamera();
-        
-        f.SetCauliflower(cf);
-        f.SetListener(this);
+        GameController.GetInstance().OnNewCauliflower(cf);
     }
     
     void Start() {
@@ -88,6 +81,8 @@ public class GardenIndicator : MonoBehaviour
 
     void TryPlant() {
         if (GardenControlls.PlantAction() && CanPlant()) {
+            var c = Instantiate(cauliflowerPrefab).GetComponent<Cauliflower>();
+            c.SetListener(this);
             tile.PlantCauliflower(Instantiate(cauliflowerPrefab).GetComponent<Cauliflower>());
         }
     }

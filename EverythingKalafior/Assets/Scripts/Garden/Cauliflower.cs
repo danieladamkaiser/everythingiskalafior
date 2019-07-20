@@ -6,15 +6,30 @@ public class Cauliflower : MonoBehaviour {
     private Animator anim;
     private float currentGrowTime = 0;
     private bool floating = false;
+    public GameObject indicator;
+    private GardenIndicator gardenIndicator;
+    public void SetListener(GardenIndicator gi) {
+        gardenIndicator = gi;
+    }
+
+    public void OnThrow() {
+        gardenIndicator.TurnOn();
+        Destroy(gameObject);
+    }
     
     void Awake() {
         anim = GetComponent<Animator>();
+    }
+
+    private void Update() {
+        indicator.transform.position = transform.position;
     }
 
     public void Uproot() {
         floating = true;
         anim.Play("floating");  
         anim.enabled = true;
+        indicator.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     void UpdateAnim() {
