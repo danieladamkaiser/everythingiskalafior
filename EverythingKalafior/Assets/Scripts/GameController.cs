@@ -96,7 +96,7 @@ namespace Assets.Scripts
 
         private void SpawnPlayer()
         {
-            player = Instantiate(PlayerPrefab, dummieCaliflowerRB.transform);
+            player = Instantiate(PlayerPrefab, cauliflower.transform.position, cauliflower.transform.rotation);
         }
 
         private void MaximizeCamera()
