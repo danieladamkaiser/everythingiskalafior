@@ -22,7 +22,6 @@ public class Garden : MonoBehaviour {
         return tiles[it];
     }
 
-    // Update is called once per frame
     void Update()
     {
         

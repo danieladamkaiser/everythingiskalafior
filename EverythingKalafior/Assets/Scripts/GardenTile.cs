@@ -12,8 +12,7 @@ public class GardenTile : MonoBehaviour {
     public Cauliflower GetCauliflower() {
         return cauliflower;
     }
-
-
+    
     private void Update() {
         if (cauliflower) {
             cauliflower.Grow();
