@@ -14,6 +14,7 @@ namespace Assets.Scripts
         public MouseFollower mouseFollower;
         public string[] sceneNames;
         public bool isCameraMinimized;
+        public BoxCollider2D SafetyCollider;
 
         private int currentLevel = 0;
         private CameraController gardenCameraController;
@@ -130,6 +131,13 @@ namespace Assets.Scripts
             levelEnd = null;
             SceneManager.LoadScene(level);
             FindStartAndEnd();
+        }
+
+        public void RemovePlayerFromScene()
+        {
+            Destroy(player);
+            player = null;
+            playgroundCameraController.SetPosition(levelStart.transform.position);
         }
 
         private void ShowLoadingScreen(float duration)
