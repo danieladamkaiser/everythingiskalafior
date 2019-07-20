@@ -83,7 +83,7 @@ namespace Assets.Scripts
             if (isCarried)
             {
                 mouseFollower.FollowMouse(dummieCaliflowerRB);
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     isCarried = false;
                     SpawnPlayer();
@@ -125,6 +125,8 @@ namespace Assets.Scripts
         {
             Destroy(player);
             player = null;
+            levelStart = null;
+            levelEnd = null;
             SceneManager.LoadScene(level);
             FindStartAndEnd();
         }
@@ -155,6 +157,7 @@ namespace Assets.Scripts
             player = null;
             cf.gameObject.AddComponent<MouseFollower>();
             dummieCaliflowerRB = cf.gameObject.AddComponent<Rigidbody2D>();
+            dummieCaliflowerRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             dummieCaliflowerRB.freezeRotation = true;
             isCarried = true;
         }

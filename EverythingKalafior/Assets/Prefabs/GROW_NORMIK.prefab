@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1232825256}
   - component: {fileID: 3519287437743032271}
   - component: {fileID: 5837467182107392097}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GROW_NORMIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floatingIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570437873661595362, guid: 138e75de087bf42499f71c0d1004167d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4570437873661595367, guid: 138e75de087bf42499f71c0d1004167d,
         type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1507150001740286917}
   - component: {fileID: 438185664}
   - component: {fileID: 7730467542401043619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
     MoveSpeed: 5
     JumpForce: 10
     inputType: 1
+  PlatformCollider: {fileID: 1504576982455131582}
 --- !u!95 &438185664
 Animator:
   serializedVersion: 3
@@ -172,7 +173,7 @@ GameObject:
   - component: {fileID: 420309994615033201}
   - component: {fileID: 1504576982455131582}
   - component: {fileID: 7810121961817051315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168729850344966624}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

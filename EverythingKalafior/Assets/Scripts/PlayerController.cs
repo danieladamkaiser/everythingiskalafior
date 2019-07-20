@@ -13,6 +13,7 @@ namespace Assets.Scripts
     {
         public Keys Keys;
         public PlayerConfig PlayerConfig;
+        public BoxCollider2D PlatformCollider;
 
         private Rigidbody2D rb;
         private CapsuleCollider2D col;
@@ -36,6 +37,7 @@ namespace Assets.Scripts
         {
             isActive = false;
             isDead = true;
+            PlatformCollider.enabled = true;
         }
 
         public void WakeUp()
