@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 151321549129843331}
   - component: {fileID: 151321549129843332}
   - component: {fileID: 151321549129843333}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GardenPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +97,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  unrobaczacz: 2147483647

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7380475193380144909}
   - component: {fileID: 2170525719454941437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SafetyBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

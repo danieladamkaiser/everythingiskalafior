@@ -15,6 +15,7 @@ namespace Assets.Scripts
         public string[] sceneNames;
         public bool isCameraMinimized;
         public BoxCollider2D SafetyCollider;
+        public GameObject Player;
 
         private int currentLevel = 0;
         private CameraController gardenCameraController;
@@ -23,7 +24,6 @@ namespace Assets.Scripts
         private GameObject levelStart;
         private GameObject levelEnd;
 
-        private GameObject player;
         private Rigidbody2D dummieCaliflowerRB;
         private Cauliflower cauliflower;
         private bool isCarried;
@@ -88,15 +88,15 @@ namespace Assets.Scripts
                 {
                     isCarried = false;
                     SpawnPlayer();
-                    player.GetComponent<PlayerController>().WakeUp();
+                    Player.GetComponent<PlayerController>().WakeUp();
                     cauliflower?.OnThrow();
                     cauliflower = null;
                 }
             }
 
-            if (player != null)
+            if (Player != null)
             {
-                if (levelEnd!=null && Vector2.Distance(player.transform.position, levelEnd.transform.position) < 1)
+                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 1)
                 {
                     LoadLevel(sceneNames[++currentLevel]);
                 }
@@ -105,8 +105,8 @@ namespace Assets.Scripts
 
         private void SpawnPlayer()
         {
-            player = Instantiate(PlayerPrefab, cauliflower.transform.position, cauliflower.transform.rotation);
-            playgroundCameraController.SetTarget(player);
+            Player = Instantiate(PlayerPrefab, cauliflower.transform.position, cauliflower.transform.rotation);
+            playgroundCameraController.SetTarget(Player);
         }
 
         private void MaximizeCamera()
@@ -123,10 +123,10 @@ namespace Assets.Scripts
 
         private void LoadLevel(string level)
         {
-            Destroy(player);
+            Destroy(Player);
             playgroundCameraController.SetTarget(null);
 
-            player = null;
+            Player = null;
             levelStart = null;
             levelEnd = null;
             SceneManager.LoadScene(level);
@@ -136,8 +136,8 @@ namespace Assets.Scripts
 
         public void RemovePlayerFromScene()
         {
-            Destroy(player);
-            player = null;
+            Destroy(Player);
+            Player = null;
             playgroundCameraController.SetPosition(levelStart.transform.position);
         }
 
@@ -160,12 +160,12 @@ namespace Assets.Scripts
         {
             cauliflower = cf;
             cf.transform.position = new Vector3(playgroundCameraController.transform.position.x, playgroundCameraController.transform.position.y, cf.transform.position.z);
-            if (player != null)
+            if (Player != null)
             {
-                player.GetComponent<PlayerController>().Die();
+                Player.GetComponent<PlayerController>().Die();
                 playgroundCameraController.SetTarget(null);
             }
-            player = null;
+            Player = null;
             cf.gameObject.AddComponent<MouseFollower>();
             dummieCaliflowerRB = cf.gameObject.AddComponent<Rigidbody2D>();
             dummieCaliflowerRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
