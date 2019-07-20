@@ -46,8 +46,11 @@ public class Cauliflower : MonoBehaviour {
         }
     }
 
-    public void Grow() {
-        currentGrowTime += Time.deltaTime;
+    public void Grow(bool robbaked) {
+        if (!robbaked) {
+            currentGrowTime += Time.deltaTime;
+        }
+
         UpdateAnim();
     }
 
