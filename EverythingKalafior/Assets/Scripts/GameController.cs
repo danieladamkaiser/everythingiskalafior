@@ -83,7 +83,7 @@ namespace Assets.Scripts
             if (isCarried)
             {
                 mouseFollower.FollowMouse(dummieCaliflowerRB);
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0))
                 {
                     isCarried = false;
                     SpawnPlayer();
