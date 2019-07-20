@@ -19,9 +19,10 @@ namespace Assets.Scripts
             cam = GetComponent<Camera>();
         }
 
+
         public void FollowTarget(GameObject target)
         {
-            throw new NotImplementedException();
+            transform.position = new Vector3(target.transform.position.x, transform.position.y);
         }
 
         public void ResizeCamera(Vector2 fromPosition, Vector2 size, float? depth = null)

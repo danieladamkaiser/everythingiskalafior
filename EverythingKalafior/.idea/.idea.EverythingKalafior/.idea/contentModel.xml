@@ -74,6 +74,7 @@
           <e p="GardenController.cs" t="Include" />
           <e p="GardenControlls.cs" t="Include" />
           <e p="GardenIndicator.cs" t="Include" />
+          <e p="GardenListener.cs" t="Include" />
           <e p="GardenTile.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="ICameraController.cs" t="Include" />
@@ -81,6 +82,8 @@
             <e p="IPlayerController.cs" t="Include" />
           </e>
           <e p="KeyboardInput.cs" t="Include" />
+          <e p="Level.cs" t="Include" />
+          <e p="MouseFollower.cs" t="Include" />
           <e p="PlayableCauliflower.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Serializable" t="Include">

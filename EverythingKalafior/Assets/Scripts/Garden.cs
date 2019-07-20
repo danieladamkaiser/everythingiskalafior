@@ -3,19 +3,32 @@
 public class Garden : MonoBehaviour {
     public GameObject[] tilesObjects;
     private GardenTile[] tiles;
+    private int len = 0;
+    private GardenListener listener;
+    
+    public void SetListener(GardenListener l) {
+        listener = l;
+    }
+
+    public void Notify(GameObject cf) {
+        if (listener != null) {
+            listener.OnNewCauliflower(cf);
+        }
+    }
     
     void Awake()
     {
         Debug.Log("Awake");
         tiles = new GardenTile[tilesObjects.Length];
+        len = Mathf.CeilToInt(Mathf.Sqrt(tilesObjects.Length));
         for (int i = 0; i < tilesObjects.Length; ++i) {
             tiles[i] = tilesObjects[i].GetComponent<GardenTile>();
         }
     }
 
     public GardenTile OnMove(Vector2Int pos) {
-        int it = pos.x * 4 + pos.y;
-        if (pos.x < 0 || pos.x >= 4 || pos.y < 0 || pos.y >= 4) {
+        int it = pos.x * len + pos.y;
+        if (pos.x < 0 || pos.x >= len || pos.y < 0 || pos.y >= len) {
             return null;
         }
 
