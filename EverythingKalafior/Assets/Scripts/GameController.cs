@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-    public class GameController : MonoBehaviour
+    public class GameController : MonoBehaviour, GardenListener
     {
         public GameObject PlayerPrefab;
         public GameObject GardenPrefab;
@@ -23,6 +23,8 @@ namespace Assets.Scripts
         private Transform levelEnd;
 
         private GameObject player;
+        private Rigidbody2D playerRB;
+        private bool isCarried;
 
         private static GameController instance;
 
@@ -34,8 +36,9 @@ namespace Assets.Scripts
             gardenCameraController = garden.GetComponent<CameraController>();
             mouseFollower = GetComponent<MouseFollower>();
             var playground = Instantiate(PlaygroundPrefab, new Vector3(0, 0, -1), Quaternion.identity);
-            mouseFollower.relativeCamera = playground.GetComponent<Camera>();
-            playgroundCameraController = playground.GetComponent<CameraController>();
+            var playGroundCamera = GameObject.Find("PlayGroundCamera").GetComponent<Camera>();
+            playgroundCameraController = playGroundCamera.GetComponent<CameraController>();
+            mouseFollower.relativeCamera = playGroundCamera;
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
@@ -68,9 +71,29 @@ namespace Assets.Scripts
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                player?.GetComponent<PlayerController>().OnNewCauliflower(player);
+                SpawnPlayer();
+                OnNewCauliflower(player);
+                isCarried = true;
+            }
+
             if (player!=null)
             {
-                playgroundCameraController.FollowTarget(player);
+                if (isCarried)
+                {
+                    mouseFollower.FollowMouse(playerRB);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        player.GetComponent<PlayerController>().WakeUp();
+                        isCarried = false;
+                    }
+                }
+                else
+                {
+                    playgroundCameraController.FollowTarget(player);
+                }
             }
         }
 
@@ -105,6 +128,13 @@ namespace Assets.Scripts
         {
             levelStart = GameObject.Find("start").transform;
             levelEnd = GameObject.Find("end").transform;
+        }
+
+        public void OnNewCauliflower(GameObject cauliflower)
+        {
+            player = cauliflower;
+            isCarried = true;
+            playerRB = player.GetComponent<Rigidbody2D>();
         }
     }
 }

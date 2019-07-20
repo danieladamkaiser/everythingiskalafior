@@ -7,5 +7,6 @@ namespace Assets.Scripts.Interfaces
         void Walk(float direction);
         void Jump();
         void Die();
+        void WakeUp();
     }
 }
