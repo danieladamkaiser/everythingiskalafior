@@ -22,4 +22,12 @@ public class GardenControlls {
     public static bool PlantAction() {
         return Input.GetKeyDown("space");
     }
+
+    public static bool UprootAction() {
+        return Input.GetKeyDown("space");
+    }
+    
+    public static bool ThrowCauliflower() {
+        return Input.GetKeyDown("space");
+    }
 }
