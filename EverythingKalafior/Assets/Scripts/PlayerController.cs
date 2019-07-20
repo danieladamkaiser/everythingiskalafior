@@ -9,7 +9,7 @@ namespace Assets.Scripts
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BoxCollider2D))]
-    public class PlayerController : MonoBehaviour, IPlayerController
+    public class PlayerController : MonoBehaviour, IPlayerController, GardenListener
     {
         public Keys Keys;
         public PlayerConfig PlayerConfig;
@@ -17,7 +17,8 @@ namespace Assets.Scripts
         private Rigidbody2D rb;
         private BoxCollider2D col;
         private IInput input;
-        private bool IsActive = true;
+        private bool isActive;
+        private bool isDead;
         private float playerSpeed;
         private bool canJump;
         private float jumpTolerance = 0.01f;
@@ -33,8 +34,15 @@ namespace Assets.Scripts
 
         public void Die()
         {
-            IsActive = false;
+            isActive = false;
+            isDead = true;
         }
+
+        public void WakeUp()
+        {
+            isActive = true;
+        }
+
 
         public void Jump()
         {
@@ -68,7 +76,7 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (IsActive)
+            if (isActive)
             {
                 Move();
             }
@@ -98,7 +106,7 @@ namespace Assets.Scripts
                 canJump = true;
             }
 
-            if (!IsActive && collision.contacts.Min(c => c.point.y) < col.bounds.min.y + jumpTolerance)
+            if (isDead && collision.contacts.Min(c => c.point.y) < col.bounds.min.y + jumpTolerance)
             {
                 rb.velocity = Vector2.zero;
                 rb.isKinematic = true;
@@ -113,6 +121,11 @@ namespace Assets.Scripts
 
         void OnCollisionEnter2D(Collision2D collision)
         {
+        }
+
+        public void OnNewCauliflower(GameObject cauliflower)
+        {
+            Die();
         }
     }
 }

@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Runtime.CompilerServices;
+using UnityEditorInternal;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-    public class GameController : MonoBehaviour
+    public class GameController : MonoBehaviour, GardenListener
     {
         public GameObject PlayerPrefab;
         public GameObject GardenPrefab;
@@ -21,19 +23,33 @@ namespace Assets.Scripts
         private Transform levelEnd;
 
         private GameObject player;
+        private Rigidbody2D playerRB;
+        private bool isCarried;
 
-        void Awake()
-        {
+        private static GameController instance;
+
+        void Awake() {
+            instance = this;
+            
             aspectRatio = Screen.width * 1f / Screen.height;
             var garden = Instantiate(GardenPrefab, new Vector3(-100, 0, -1), Quaternion.identity);
             gardenCameraController = garden.GetComponent<CameraController>();
             mouseFollower = GetComponent<MouseFollower>();
             var playground = Instantiate(PlaygroundPrefab, new Vector3(0, 0, -1), Quaternion.identity);
-            mouseFollower.relativeCamera = playground.GetComponent<Camera>();
-            playgroundCameraController = playground.GetComponent<CameraController>();
+            var playGroundCamera = GameObject.Find("PlayGroundCamera").GetComponent<Camera>();
+            playgroundCameraController = playGroundCamera.GetComponent<CameraController>();
+            mouseFollower.relativeCamera = playGroundCamera;
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
+        }
+
+        public static GameController GetInstance() {
+            return instance;
+        }
+
+        public Vector3 GetCamPos() {
+            return playground.transform.position;
         }
 
         void Start()
@@ -57,7 +73,19 @@ namespace Assets.Scripts
 
             if (player!=null)
             {
-                playgroundCameraController.FollowTarget(player);
+                if (isCarried)
+                {
+                    mouseFollower.FollowMouse(playerRB);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        player.GetComponent<PlayerController>().WakeUp();
+                        isCarried = false;
+                    }
+                }
+                else
+                {
+                    playgroundCameraController.FollowTarget(player);
+                }
             }
         }
 
@@ -72,7 +100,7 @@ namespace Assets.Scripts
             isCameraMinimized = false;
         }
 
-        private void MinimizeCamera()
+        public void MinimizeCamera()
         {
             gardenCameraController.ResizeCamera(new Vector2(0.02f, 0.75f), new Vector2(0.2f / aspectRatio, 0.2f));
             isCameraMinimized = true;
@@ -92,6 +120,14 @@ namespace Assets.Scripts
         {
             levelStart = GameObject.Find("start").transform;
             levelEnd = GameObject.Find("end").transform;
+        }
+
+        public void OnNewCauliflower(GameObject cauliflower)
+        {
+            player?.GetComponent<PlayerController>().OnNewCauliflower(player);
+            player = cauliflower;
+            isCarried = true;
+            playerRB = player.GetComponent<Rigidbody2D>();
         }
     }
 }

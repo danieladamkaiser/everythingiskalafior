@@ -12,6 +12,17 @@ public class GardenTile : MonoBehaviour {
     public Cauliflower GetCauliflower() {
         return cauliflower;
     }
+
+    public Cauliflower Uproot() {
+        if (cauliflower && cauliflower.IsGrownUp()) {
+            cauliflower.Uproot();
+            var tmp = cauliflower;
+            cauliflower = null;
+            return tmp;
+        }
+
+        return null;
+    }
     
     private void Update() {
         if (cauliflower) {
