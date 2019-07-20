@@ -123,6 +123,8 @@ namespace Assets.Scripts
 
         private void LoadLevel(string level)
         {
+            Destroy(player);
+            player = null;
             SceneManager.LoadScene(level);
             FindStartAndEnd();
         }
@@ -136,6 +138,10 @@ namespace Assets.Scripts
         {
             levelStart = GameObject.Find("start");
             levelEnd = GameObject.Find("end");
+            if (levelStart!=null)
+            {
+                playgroundCameraController.SetPosition(levelStart.transform.position);
+            }
         }
 
         public void OnNewCauliflower(Cauliflower cf)

@@ -24,6 +24,10 @@ namespace Assets.Scripts
             cam = GetComponent<Camera>();
         }
 
+        public void SetPosition(Vector2 position)
+        {
+            cam.transform.position = new Vector3(position.x, position.y, cam.transform.position.z);
+        }
 
         public void FollowTarget(GameObject target) {
             var n = new Vector3(target.transform.position.x, transform.transform.position.y, transform.position.z);
