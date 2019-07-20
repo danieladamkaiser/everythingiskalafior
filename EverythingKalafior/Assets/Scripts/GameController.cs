@@ -130,6 +130,7 @@ namespace Assets.Scripts
             levelEnd = null;
             SceneManager.LoadScene(level);
             FindStartAndEnd();
+            Seeds.SetCnt(1);
         }
 
         private void ShowLoadingScreen(float duration)

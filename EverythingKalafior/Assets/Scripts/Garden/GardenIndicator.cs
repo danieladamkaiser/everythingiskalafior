@@ -61,7 +61,7 @@ public class GardenIndicator : MonoBehaviour
     }
 
     bool CanPlant() {
-        return !tile.GetCauliflower();
+        return !tile.GetCauliflower() && Seeds.Count() > 0;
     }
 
     bool CanUproot() {
@@ -82,6 +82,7 @@ public class GardenIndicator : MonoBehaviour
         if (GardenControlls.PlantAction() && CanPlant()) {
             var c = Instantiate(cauliflowerPrefab).GetComponent<Cauliflower>();
             c.SetListener(this);
+            Seeds.Decrement();
             tile.PlantCauliflower(c);
         }
     }
