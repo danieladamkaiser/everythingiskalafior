@@ -210,7 +210,7 @@ PrefabInstance:
     - target: {fileID: 7247812730781086578, guid: 2d0d891bfd09f8e44a0aa853d28a26f8,
         type: 3}
       propertyPath: sceneNames.Array.data[1]
-      value: LevelThree
+      value: LevelTwo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0d891bfd09f8e44a0aa853d28a26f8, type: 3}
