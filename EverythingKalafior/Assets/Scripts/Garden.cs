@@ -4,6 +4,18 @@ public class Garden : MonoBehaviour {
     public GameObject[] tilesObjects;
     private GardenTile[] tiles;
     private int len = 0;
+    private GardenListener listener;
+    
+    public void SetListener(GardenListener l) {
+        listener = l;
+    }
+
+    public void Notify(GameObject cf) {
+        if (listener != null) {
+            listener.OnNewCauliflower(cf);
+        }
+    }
+    
     void Awake()
     {
         Debug.Log("Awake");
