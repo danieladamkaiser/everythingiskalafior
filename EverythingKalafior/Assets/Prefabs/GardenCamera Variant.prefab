@@ -270,6 +270,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec8a21ce249ca6439bed564786c9416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7147876733627559557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975931059744314910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357c5409a1e1e414fa3f00a908aec627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gardenObject: {fileID: 4975931059818931095}
+  cauliflowerPrefab: {fileID: 8490150864980038103, guid: dbc218546705d6b40a55537af8cf6a9d,
+    type: 3}
 --- !u!1001 &3519287436789181540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,25 +421,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8160766148453637816, guid: 279be511a918d084494b69c56a4982f8,
+    - target: {fileID: 8160766148453637817, guid: 279be511a918d084494b69c56a4982f8,
         type: 3}
-      propertyPath: gardenObject
-      value: 
-      objectReference: {fileID: 4975931059818931095}
-    - target: {fileID: 8160766148453637816, guid: 279be511a918d084494b69c56a4982f8,
-        type: 3}
-      propertyPath: cauliflowerPrefab
-      value: 
-      objectReference: {fileID: 8490150864980038103, guid: dbc218546705d6b40a55537af8cf6a9d,
-        type: 3}
-    - target: {fileID: 8160766148453637816, guid: 279be511a918d084494b69c56a4982f8,
-        type: 3}
-      propertyPath: floatingPrefab
-      value: 
-      objectReference: {fileID: 4570437873661595362, guid: 138e75de087bf42499f71c0d1004167d,
-        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 279be511a918d084494b69c56a4982f8, type: 3}
+--- !u!1 &4975931059744314910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8160766148453637823, guid: 279be511a918d084494b69c56a4982f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3769182469421009057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4084418006040668566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -501,11 +510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 1.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052457791573006183, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf510193a283824a92d8b28b0f73fa9, type: 3}

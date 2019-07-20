@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f81f6e0c-d2c1-458e-a247-9690a1efa48b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GROW_NORMIK.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GROW_NORMIK.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/floatingIndicator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/floatingIndicator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Garden/Cauliflower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Garden/Cauliflower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Garden/Garden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Garden/Garden.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Garden/GardenIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Garden/GardenIndicator.cs" afterDir="false" />
-    </list>
+    <list default="true" id="f81f6e0c-d2c1-458e-a247-9690a1efa48b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Garden/Garden.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="63" lean-forward="true" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+            <state relative-caret-position="80">
+              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding>
                 <marker date="1563634671115" expanded="true" signature="56:702" ph="{...}" />
                 <marker date="1563634671115" expanded="true" signature="174:436" ph="{...}" />
@@ -376,12 +369,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563550345454</updated>
       <workItem from="1563550349237" duration="13709000" />
-      <workItem from="1563617158690" duration="14993000" />
+      <workItem from="1563617158690" duration="15369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28702000" />
+    <option name="totallyTimeSpent" value="29078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Garden/Garden.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="63" lean-forward="true" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+        <state relative-caret-position="80">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding>
             <marker date="1563634671115" expanded="true" signature="56:702" ph="{...}" />
             <marker date="1563634671115" expanded="true" signature="174:436" ph="{...}" />
