@@ -123,7 +123,7 @@ namespace Assets.Scripts
         {
         }
 
-        public void OnNewCauliflower(GameObject cauliflower)
+        public void OnNewCauliflower(Cauliflower cauliflower)
         {
             Die();
         }

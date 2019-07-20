@@ -24,6 +24,7 @@ namespace Assets.Scripts
 
         private GameObject player;
         private Rigidbody2D dummieCaliflowerRB;
+        private Cauliflower cauliflower;
         private bool isCarried;
 
         private static GameController instance;
@@ -52,7 +53,7 @@ namespace Assets.Scripts
 
         public Vector3 GetCamPos()
         {
-            return playground.transform.position;
+            return playgroundCameraController.transform.position;
         }
 
         void Start()
@@ -82,6 +83,8 @@ namespace Assets.Scripts
                     isCarried = false;
                     SpawnPlayer();
                     player.GetComponent<PlayerController>().WakeUp();
+                    cauliflower?.OnThrow();
+                    cauliflower = null;
                 }
             }
 
@@ -124,11 +127,17 @@ namespace Assets.Scripts
             levelEnd = GameObject.Find("end").transform;
         }
 
-        public void OnNewCauliflower(GameObject cauliflower)
+        public void OnNewCauliflower(Cauliflower cf)
         {
-            player?.GetComponent<PlayerController>().OnNewCauliflower(player);
-            cauliflower.AddComponent<MouseFollower>();
-            dummieCaliflowerRB = cauliflower.AddComponent<Rigidbody2D>();
+            cauliflower = cf;
+            cf.transform.position = new Vector3(playgroundCameraController.transform.position.x, playgroundCameraController.transform.position.y, cf.transform.position.z);
+            if (player != null)
+            {
+                player.GetComponent<PlayerController>().Die();
+            }
+            player = null;
+            cf.gameObject.AddComponent<MouseFollower>();
+            dummieCaliflowerRB = cf.gameObject.AddComponent<Rigidbody2D>();
             isCarried = true;
         }
     }

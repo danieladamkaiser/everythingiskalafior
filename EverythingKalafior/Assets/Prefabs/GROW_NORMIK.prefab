@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8490150864980038106}
   - component: {fileID: 8490150864980038105}
-  - component: {fileID: 1232825259}
   - component: {fileID: 1232825256}
   - component: {fileID: 3519287437743032271}
+  - component: {fileID: 5837467182107392097}
   m_Layer: 0
-  m_Name: GROW_NORMIK 0
+  m_Name: GROW_NORMIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,19 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1232825259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8490150864980038103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7b41e99f465234bab16201eef8e75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growTime: 5
 --- !u!95 &1232825256
 Animator:
   serializedVersion: 3
@@ -128,3 +115,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   growTime: 5
+  indicator: {fileID: 4570437873661595362, guid: 138e75de087bf42499f71c0d1004167d,
+    type: 3}
+--- !u!61 &5837467182107392097
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490150864980038103}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.38700008}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.2}
+    oldSize: {x: 1.28, y: 1.29}
+    newSize: {x: 1.29, y: 1.29}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.29}
+  m_EdgeRadius: 0
