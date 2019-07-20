@@ -48,7 +48,7 @@ namespace Assets.Scripts
         {
             if (canJump)
             {
-                rb.velocity += new Vector2(0, PlayerConfig.JumpForce);
+                rb.velocity = new Vector2(0, PlayerConfig.JumpForce);
                 canJump = false;
             }
         }
@@ -79,7 +79,7 @@ namespace Assets.Scripts
             if (isActive)
             {
                 Move();
-            }
+            } 
         }
 
         private void Move()
