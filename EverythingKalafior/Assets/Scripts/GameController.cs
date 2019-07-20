@@ -71,14 +71,6 @@ namespace Assets.Scripts
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                player?.GetComponent<PlayerController>().OnNewCauliflower(null);
-                SpawnPlayer();
-                //OnNewCauliflower(player);
-                isCarried = true;
-            }
-
             if (player!=null)
             {
                 if (isCarried)
@@ -132,7 +124,8 @@ namespace Assets.Scripts
 
         public void OnNewCauliflower(Cauliflower cauliflower)
         {
-            player = cauliflower.gameObject;
+            player?.GetComponent<PlayerController>().OnNewCauliflower(player);
+            player = cauliflower;
             isCarried = true;
             playerRB = player.GetComponent<Rigidbody2D>();
         }
