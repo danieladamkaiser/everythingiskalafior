@@ -101,7 +101,7 @@ namespace Assets.Scripts
 
             if (Player != null)
             {
-                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 1)
+                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 0.2f)
                 {
                     LoadLevel(sceneNames[++currentLevel]);
                 }

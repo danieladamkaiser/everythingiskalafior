@@ -88,6 +88,7 @@
           <e p="MouseFollower.cs" t="Include" />
           <e p="PlayableCauliflower.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="SafetyBox.cs" t="Include" />
           <e p="Seeds.cs" t="Include" />
           <e p="Serializable" t="Include">
             <e p="Keys.cs" t="Include" />
