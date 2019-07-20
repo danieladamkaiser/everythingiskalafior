@@ -3,8 +3,20 @@
 public class Garden : MonoBehaviour {
     public GameObject[] tilesObjects;
     private GardenTile[] tiles;
+    public int unrobaczacz = int.MaxValue;
     private int len = 0;
+
+    public bool IsUnrobaczaczAvailable() {
+        return unrobaczacz > 0;
+    }
+
+    public void DecrementUnrobaczacz() {
+        unrobaczacz--;
+    }
     
+    public void IncrementUnrobaczacz() {
+        unrobaczacz++;
+    }
     void Awake()
     {
         tiles = new GardenTile[tilesObjects.Length];

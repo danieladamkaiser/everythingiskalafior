@@ -85,6 +85,12 @@ public class GardenIndicator : MonoBehaviour
             tile.PlantCauliflower(c);
         }
     }
+
+    void TryUnrobak() {
+        if (GardenControlls.UnRobak() && garden.IsUnrobaczaczAvailable() && tile.UnRobak()) {
+            garden.DecrementUnrobaczacz();
+        }
+    }
     
     void Update() {
         if (!sRenderer.enabled) {
@@ -92,6 +98,7 @@ public class GardenIndicator : MonoBehaviour
         }
         
         TryToMove();
+        TryUnrobak();
         TryPlant();
         TryUproot();
     }

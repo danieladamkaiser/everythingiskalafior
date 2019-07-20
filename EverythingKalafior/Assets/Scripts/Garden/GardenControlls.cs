@@ -33,7 +33,7 @@ public class GardenControlls {
         return !GameController.GetInstance().isCameraMinimized && Input.GetKeyDown("space");
     }
     
-    public static bool ThrowCauliflower() {
+    public static bool UnRobak() {
         return !GameController.GetInstance().isCameraMinimized && Input.GetKeyDown("space");
     }
 }

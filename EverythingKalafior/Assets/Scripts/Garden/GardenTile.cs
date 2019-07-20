@@ -30,8 +30,14 @@ public class GardenTile : MonoBehaviour {
         return null;
     }
 
-    public bool KillRobak() {
-        return robak;
+    public bool UnRobak() {
+        if (robak) {
+            Destroy(robak);
+            robak = null;
+            return true;
+        }
+
+        return false;
     }
 
     private void zarobakuj() {
