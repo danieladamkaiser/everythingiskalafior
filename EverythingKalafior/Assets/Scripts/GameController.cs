@@ -12,15 +12,15 @@ namespace Assets.Scripts
         public GameObject PlaygroundPrefab;
         public Transform SpawnPosition;
         public MouseFollower mouseFollower;
-        public Scene[] scenes;
+        public string[] sceneNames;
 
-        private int currentLevel;
+        private int currentLevel = 0;
         private CameraController gardenCameraController;
         private CameraController playgroundCameraController;
         private bool isCameraMinimized;
         private float aspectRatio;
-        private Transform levelStart;
-        private Transform levelEnd;
+        private GameObject levelStart;
+        private GameObject levelEnd;
 
         private GameObject player;
         private Rigidbody2D dummieCaliflowerRB;
@@ -59,10 +59,15 @@ namespace Assets.Scripts
         void Start()
         {
             MinimizeCamera();
+            LoadLevel(sceneNames[currentLevel]);
         }
 
         void Update()
         {
+            if (levelStart==null || levelEnd == null)
+            {
+                FindStartAndEnd();
+            }
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (isCameraMinimized)
@@ -91,6 +96,11 @@ namespace Assets.Scripts
             if (player != null)
             {
                 playgroundCameraController.FollowTarget(player);
+
+                if (levelEnd!=null && Vector2.Distance(player.transform.position, levelEnd.transform.position) < 1)
+                {
+                    LoadLevel(sceneNames[++currentLevel]);
+                }
             }
         }
 
@@ -111,9 +121,10 @@ namespace Assets.Scripts
             isCameraMinimized = true;
         }
 
-        private void LoadLevel(int level)
+        private void LoadLevel(string level)
         {
             SceneManager.LoadScene(level);
+            FindStartAndEnd();
         }
 
         private void ShowLoadingScreen(float duration)
@@ -123,8 +134,8 @@ namespace Assets.Scripts
 
         private void FindStartAndEnd()
         {
-            levelStart = GameObject.Find("start").transform;
-            levelEnd = GameObject.Find("end").transform;
+            levelStart = GameObject.Find("start");
+            levelEnd = GameObject.Find("end");
         }
 
         public void OnNewCauliflower(Cauliflower cf)

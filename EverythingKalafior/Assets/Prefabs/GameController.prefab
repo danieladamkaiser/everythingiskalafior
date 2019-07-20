@@ -52,7 +52,9 @@ MonoBehaviour:
     type: 3}
   SpawnPosition: {fileID: 0}
   mouseFollower: {fileID: 0}
-  scenes: []
+  sceneNames:
+  - LevelOne
+  - LevelTwo
 --- !u!114 &7247812730781086588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,5 +67,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8162c1df4663e45991a37005e36931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   relativeCamera: {fileID: 0}
