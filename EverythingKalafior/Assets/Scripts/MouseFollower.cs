@@ -9,20 +9,14 @@ namespace Assets.Scripts
 {
     public class MouseFollower : MonoBehaviour
     {
-        public Rigidbody2D rb;
         public Camera relativeCamera;
 
-
-        void Update()
+        public void FollowMouse(Rigidbody2D rb)
         {
             if (rb != null && relativeCamera != null)
             {
-                FollowMouse();
+                rb.MovePosition(Vector3.Lerp(rb.position, relativeCamera.ScreenToWorldPoint(Input.mousePosition), 0.25f));
             }
-        }
-        public void FollowMouse()
-        {
-            rb.MovePosition(relativeCamera.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 }

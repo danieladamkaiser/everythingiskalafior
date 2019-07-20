@@ -22,7 +22,7 @@ namespace Assets.Scripts
 
         public void FollowTarget(GameObject target)
         {
-            transform.position = new Vector3(target.transform.position.x, transform.position.y);
+            transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
         }
 
         public void ResizeCamera(Vector2 fromPosition, Vector2 size, float? depth = null)
