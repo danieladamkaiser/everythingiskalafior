@@ -5,39 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f81f6e0c-d2c1-458e-a247-9690a1efa48b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EverythingKalafior/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CLOUDS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CLOUDS.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FLOOR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FLOOR.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayGround.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayGround.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelOne.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelOne.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ICameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ICameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/CLOUDS.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/CLOUDS.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/FASTT.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/FASTT.gif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/FLOOR.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/FLOOR.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/GARDEN.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/GARDEN.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/GardenIndicator.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/GardenIndicator.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MENU.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/MENU.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/NORMIK.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/NORMIK.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SCENA.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/SCENA.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SHELF.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/SHELF.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/STONE.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/STONE.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/FLOOR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/FLOOR.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/GROUND1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Sprites/NORMIK.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/STAGE1..png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ded.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ded.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ded.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/garden-tile.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/garden-tile.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/szybko.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/szybko.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/BIG_SKY.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Sprites/BIG_SKY.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/GROUND1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Sprites/STAGE1..png.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+            <state relative-caret-position="-41">
+              <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
               <folding>
                 <marker date="1563656536319" expanded="false" signature="6:167" ph="..." />
                 <marker date="1563656536319" expanded="true" signature="194:1864" ph="{...}" />
@@ -462,12 +434,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563550345454</updated>
       <workItem from="1563550349237" duration="13709000" />
-      <workItem from="1563617158690" duration="28366000" />
+      <workItem from="1563617158690" duration="28979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42075000" />
+    <option name="totallyTimeSpent" value="42688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -930,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+        <state relative-caret-position="-41">
+          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding>
             <marker date="1563656536319" expanded="false" signature="6:167" ph="..." />
             <marker date="1563656536319" expanded="true" signature="194:1864" ph="{...}" />

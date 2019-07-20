@@ -125,7 +125,7 @@ MonoBehaviour:
     Actions: 
   PlayerConfig:
     MoveSpeed: 5
-    JumpForce: 10
+    JumpForce: 6
     inputType: 1
   PlatformCollider: {fileID: 1504576982455131582}
 --- !u!95 &438185664
