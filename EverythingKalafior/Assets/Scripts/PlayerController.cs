@@ -38,6 +38,7 @@ namespace Assets.Scripts
             isActive = false;
             isDead = true;
             PlatformCollider.enabled = true;
+            GetComponent<AnimationMoveControll>().Die();
         }
 
         public void WakeUp()

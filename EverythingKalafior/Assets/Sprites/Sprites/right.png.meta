@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 960f3dd3f2377fe489ef441b94cdce38
+guid: 8fcc104c2313115439a78b50e4555ab8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4568522202346674233
-    second: NORMIK 0
+      213: -5854909383352046110
+    second: right 0
   - first:
-      213: 6045307021144650334
-    second: NORMIK 1
+      213: 3284977254818129239
+    second: right 1
   - first:
-      213: -3961532196051026617
-    second: NORMIK 2
+      213: -9032829574464112869
+    second: right 2
   - first:
-      213: 1621748902854203992
-    second: NORMIK 3
+      213: 1513781844569505064
+    second: right 3
   - first:
-      213: 6254802934226412309
-    second: NORMIK 4
+      213: 3516501658755838799
+    second: right 4
   - first:
-      213: 6106235694694351401
-    second: NORMIK 5
+      213: 4429123066317628058
+    second: right 5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -91,7 +91,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NORMIK 0
+      name: right 0
       rect:
         serializedVersion: 2
         x: 0
@@ -99,20 +99,20 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7a42aef46e20d8438a9c6e8aebc01b0
-      internalID: -4568522202346674233
+      spriteID: 508c620bce8af464cba2157d26358ee2
+      internalID: -5854909383352046110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NORMIK 1
+      name: right 1
       rect:
         serializedVersion: 2
         x: 129
@@ -120,20 +120,20 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b57193dff92e01047bf72ca32532947e
-      internalID: 6045307021144650334
+      spriteID: 7804355bade64304e9d0412dcc9c1e5a
+      internalID: 3284977254818129239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NORMIK 2
+      name: right 2
       rect:
         serializedVersion: 2
         x: 258
@@ -141,20 +141,20 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cff6d29ee2c3fb543b371e2c17f16e34
-      internalID: -3961532196051026617
+      spriteID: d084c9ee11d4950458b3451db10b1269
+      internalID: -9032829574464112869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NORMIK 3
+      name: right 3
       rect:
         serializedVersion: 2
         x: 0
@@ -162,20 +162,20 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85ea4f513bb82b347a7808199dbd478e
-      internalID: 1621748902854203992
+      spriteID: 907768ce88fcb3748a63e6f14b76c416
+      internalID: 1513781844569505064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NORMIK 4
+      name: right 4
       rect:
         serializedVersion: 2
         x: 129
@@ -183,20 +183,20 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46fa55bc1e6a06147af4cca79a81150a
-      internalID: 6254802934226412309
+      spriteID: d445e9a4418aa244797c22ccc45d2dee
+      internalID: 3516501658755838799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NORMIK 5
+      name: right 5
       rect:
         serializedVersion: 2
         x: 258
@@ -204,14 +204,14 @@ TextureImporter:
         width: 129
         height: 129
       alignment: 7
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c390aa8995ad254b9923d435fbad5c7
-      internalID: 6106235694694351401
+      spriteID: 8146704102868144fbe70891d7fc7338
+      internalID: 4429123066317628058
       vertices: []
       indices: 
       edges: []
@@ -219,7 +219,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 94ca3d40737cda641807b78e35ca7521
+    spriteID: 3558ad8f64caebb40b04e345c06c39f5
     internalID: 0
     vertices: []
     indices: 

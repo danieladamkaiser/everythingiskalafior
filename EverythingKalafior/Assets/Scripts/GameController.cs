@@ -95,8 +95,6 @@ namespace Assets.Scripts
 
             if (player != null)
             {
-                playgroundCameraController.FollowTarget(player);
-
                 if (levelEnd!=null && Vector2.Distance(player.transform.position, levelEnd.transform.position) < 1)
                 {
                     LoadLevel(sceneNames[++currentLevel]);
@@ -107,6 +105,7 @@ namespace Assets.Scripts
         private void SpawnPlayer()
         {
             player = Instantiate(PlayerPrefab, cauliflower.transform.position, cauliflower.transform.rotation);
+            playgroundCameraController.SetTarget(player);
         }
 
         private void MaximizeCamera()
@@ -124,6 +123,8 @@ namespace Assets.Scripts
         private void LoadLevel(string level)
         {
             Destroy(player);
+            playgroundCameraController.SetTarget(null);
+
             player = null;
             levelStart = null;
             levelEnd = null;
@@ -153,6 +154,7 @@ namespace Assets.Scripts
             if (player != null)
             {
                 player.GetComponent<PlayerController>().Die();
+                playgroundCameraController.SetTarget(null);
             }
             player = null;
             cf.gameObject.AddComponent<MouseFollower>();

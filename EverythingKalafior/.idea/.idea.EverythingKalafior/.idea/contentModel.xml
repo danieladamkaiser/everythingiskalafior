@@ -63,6 +63,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AnimationMoveControll.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
           <e p="Enums" t="Include">
             <e p="InputType.cs" t="Include" />

@@ -14,25 +14,31 @@ namespace Assets.Scripts
     {
         private Camera cam;
 
-        private Vector3 currentOffset;
-        
+        public float yOff = 0;
         public GameObject[] parallax;
         public float[] parallaxModifiers;
 
+        private GameObject target = null;
+
+        public void SetTarget(GameObject t) {
+            target = t;
+        }
+        
         void Awake()
         {
             cam = GetComponent<Camera>();
         }
 
-        public void SetPosition(Vector2 position)
-        {
+        public void SetPosition(Vector2 position) {
             cam.transform.position = new Vector3(position.x, position.y, cam.transform.position.z);
         }
 
-        public void FollowTarget(GameObject target) {
-            var n = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
-            currentOffset = n - transform.position;
+        Vector3 FollowTarget(GameObject target) {
+            var n = new Vector3(target.transform.position.x, target.transform.position.y + yOff, transform.position.z);
+            var off =  n - transform.position;
+            n = Vector3.Lerp(transform.position, n, 0.25f);
             transform.position = n;
+            return off;
         }
 
         public void ResizeCamera(Vector2 fromPosition, Vector2 size, float? depth = null)
@@ -44,11 +50,16 @@ namespace Assets.Scripts
             }
         }
 
-        private void Update() {
+        private void FixedUpdate() {
+            if (!target) {
+                return;
+            }
+            
+            var off = FollowTarget(target);
+
             for (int i = 0; i < parallax.Length; i++) {
                 var newPos = parallax[i].transform.position;
-                newPos.x += currentOffset.x * parallaxModifiers[i];
-                newPos.y += currentOffset.y * parallaxModifiers[i];
+                newPos.x += off.x * parallaxModifiers[i];
                 parallax[i].transform.position = newPos;
             }
         }
