@@ -1,24 +1,43 @@
-﻿using Assets.Scripts.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
     public class GameController : MonoBehaviour
     {
         public GameObject PlayerPrefab;
+        public GameObject GardenPrefab;
+        public GameObject PlaygroundPrefab;
         public Transform SpawnPosition;
-        public CameraController GardenCamera;
-        private bool cameraMinimized;
+        public MouseFollower mouseFollower;
+        public Scene[] scenes;
+
+        private int currentLevel;
+        private CameraController gardenCameraController;
+        private CameraController playgroundCameraController;
+        private bool isCameraMinimized;
         private float aspectRatio;
+        private Transform levelStart;
+        private Transform levelEnd;
+
+        private GameObject player;
 
         void Awake()
         {
             aspectRatio = Screen.width * 1f / Screen.height;
+            var garden = Instantiate(GardenPrefab, new Vector3(-100, 0, -1), Quaternion.identity);
+            gardenCameraController = garden.GetComponent<CameraController>();
+            mouseFollower = GetComponent<MouseFollower>();
+            var playground = Instantiate(PlaygroundPrefab, new Vector3(0, 0, -1), Quaternion.identity);
+            mouseFollower.relativeCamera = playground.GetComponent<Camera>();
+            playgroundCameraController = playground.GetComponent<CameraController>();
+            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(garden);
+            DontDestroyOnLoad(playground);
+        }
+
+        void Start()
+        {
             MinimizeCamera();
         }
 
@@ -26,30 +45,42 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                SpawnPlayer();
+                if (isCameraMinimized)
+                {
+                    MaximizeCamera();
+                }
+                else
+                {
+                    MinimizeCamera();
+                }
+            }
+
+            if (player!=null)
+            {
+                playgroundCameraController.FollowTarget(player);
             }
         }
 
         private void SpawnPlayer()
         {
-            Instantiate(PlayerPrefab, SpawnPosition);
+            player = Instantiate(PlayerPrefab, SpawnPosition);
         }
 
         private void MaximizeCamera()
         {
-            GardenCamera.ResizeCamera(new Vector2(0.05f, 0.35f), new Vector2(0.6f / aspectRatio, 0.6f));
-            cameraMinimized = false;
+            gardenCameraController.ResizeCamera(new Vector2(0.05f, 0.35f), new Vector2(0.6f / aspectRatio, 0.6f));
+            isCameraMinimized = false;
         }
 
         private void MinimizeCamera()
         {
-            GardenCamera.ResizeCamera(new Vector2(0.02f, 0.75f), new Vector2(0.2f / aspectRatio, 0.2f));
-            cameraMinimized = true;
+            gardenCameraController.ResizeCamera(new Vector2(0.02f, 0.75f), new Vector2(0.2f / aspectRatio, 0.2f));
+            isCameraMinimized = true;
         }
 
         private void LoadLevel(int level)
         {
-
+            SceneManager.LoadScene(level);
         }
         
         private void ShowLoadingScreen(float duration)
@@ -57,5 +88,10 @@ namespace Assets.Scripts
 
         }
 
+        private void FindStartAndEnd()
+        {
+            levelStart = GameObject.Find("start").transform;
+            levelEnd = GameObject.Find("end").transform;
+        }
     }
 }
