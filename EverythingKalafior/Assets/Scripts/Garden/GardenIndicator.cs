@@ -32,7 +32,6 @@ public class GardenIndicator : MonoBehaviour
     
     void Start() {
         sRenderer = GetComponent<SpriteRenderer>();
-        Debug.Log("Start");
 
         garden = gardenObject.GetComponent<Garden>();
         tile = garden.OnMove(position);

@@ -7,7 +7,6 @@ public class Garden : MonoBehaviour {
     
     void Awake()
     {
-        Debug.Log("Awake");
         tiles = new GardenTile[tilesObjects.Length];
         len = Mathf.CeilToInt(Mathf.Sqrt(tilesObjects.Length));
         for (int i = 0; i < tilesObjects.Length; ++i) {
