@@ -30,7 +30,7 @@ namespace Assets.Scripts
         }
 
         public void FollowTarget(GameObject target) {
-            var n = new Vector3(target.transform.position.x, transform.transform.position.y, transform.position.z);
+            var n = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
             currentOffset = n - transform.position;
             transform.position = n;
         }
