@@ -44,7 +44,9 @@ public class GardenTile : MonoBehaviour {
         if (robakTimer > robakTimeout && !cauliflower.IsGrownUp()) {
             if (UnityEngine.Random.Range(0f, 1f) <= robakProbability) {
                 robak = Instantiate(robakPrefab);
-                robak.transform.position = cauliflower.gameObject.transform.position;
+                var newpos = cauliflower.gameObject.transform.position;
+                newpos.z = 1;
+                robak.transform.position = newpos;
             }
             
             robakTimer = 0;
