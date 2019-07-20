@@ -79,7 +79,7 @@ namespace Assets.Scripts
             if (isActive)
             {
                 Move();
-            }
+            } 
         }
 
         private void Move()
