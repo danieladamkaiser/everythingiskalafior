@@ -8,14 +8,14 @@ using System.Linq;
 namespace Assets.Scripts
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(CapsuleCollider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController, GardenListener
     {
         public Keys Keys;
         public PlayerConfig PlayerConfig;
 
         private Rigidbody2D rb;
-        private BoxCollider2D col;
+        private CapsuleCollider2D col;
         private IInput input;
         private bool isActive;
         private bool isDead;
@@ -29,7 +29,7 @@ namespace Assets.Scripts
             input = new KeyboardInput();
 
             rb = GetComponent<Rigidbody2D>();
-            col = GetComponent<BoxCollider2D>();
+            col = GetComponent<CapsuleCollider2D>();
         }
 
         public void Die()
