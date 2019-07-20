@@ -19,8 +19,10 @@ public class Seeds : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(gameObject);
-        cnt++;
+        if (other.CompareTag("Player")) {
+            Destroy(gameObject);
+            cnt++;
+        }
     }
 
     private static int cnt;
