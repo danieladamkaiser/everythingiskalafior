@@ -23,14 +23,15 @@ namespace Assets.Scripts
         private Transform levelEnd;
 
         private GameObject player;
-        private Rigidbody2D playerRB;
+        private Rigidbody2D dummieCaliflowerRB;
         private bool isCarried;
 
         private static GameController instance;
 
-        void Awake() {
+        void Awake()
+        {
             instance = this;
-            
+
             aspectRatio = Screen.width * 1f / Screen.height;
             var garden = Instantiate(GardenPrefab, new Vector3(-100, 0, -1), Quaternion.identity);
             gardenCameraController = garden.GetComponent<CameraController>();
@@ -44,11 +45,13 @@ namespace Assets.Scripts
             DontDestroyOnLoad(playground);
         }
 
-        public static GameController GetInstance() {
+        public static GameController GetInstance()
+        {
             return instance;
         }
 
-        public Vector3 GetCamPos() {
+        public Vector3 GetCamPos()
+        {
             return playground.transform.position;
         }
 
@@ -71,27 +74,26 @@ namespace Assets.Scripts
                 }
             }
 
-            if (player!=null)
+            if (isCarried)
             {
-                if (isCarried)
+                mouseFollower.FollowMouse(dummieCaliflowerRB);
+                if (Input.GetMouseButtonDown(0))
                 {
-                    mouseFollower.FollowMouse(playerRB);
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        player.GetComponent<PlayerController>().WakeUp();
-                        isCarried = false;
-                    }
+                    isCarried = false;
+                    SpawnPlayer();
+                    player.GetComponent<PlayerController>().WakeUp();
                 }
-                else
-                {
-                    playgroundCameraController.FollowTarget(player);
-                }
+            }
+
+            if (player != null)
+            {
+                playgroundCameraController.FollowTarget(player);
             }
         }
 
         private void SpawnPlayer()
         {
-            player = Instantiate(PlayerPrefab, SpawnPosition);
+            player = Instantiate(PlayerPrefab, dummieCaliflowerRB.transform);
         }
 
         private void MaximizeCamera()
@@ -110,7 +112,7 @@ namespace Assets.Scripts
         {
             SceneManager.LoadScene(level);
         }
-        
+
         private void ShowLoadingScreen(float duration)
         {
 
@@ -125,9 +127,9 @@ namespace Assets.Scripts
         public void OnNewCauliflower(GameObject cauliflower)
         {
             player?.GetComponent<PlayerController>().OnNewCauliflower(player);
-            player = cauliflower;
+            cauliflower.AddComponent<MouseFollower>();
+            dummieCaliflowerRB = cauliflower.AddComponent<Rigidbody2D>();
             isCarried = true;
-            playerRB = player.GetComponent<Rigidbody2D>();
         }
     }
 }
