@@ -245,6 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec8a21ce249ca6439bed564786c9416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallax: []
+  parallaxModifiers: []
 --- !u!1 &6606102316079074822
 GameObject:
   m_ObjectHideFlags: 0
