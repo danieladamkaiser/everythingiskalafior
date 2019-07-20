@@ -13,11 +13,11 @@ namespace Assets.Scripts
         public Transform SpawnPosition;
         public MouseFollower mouseFollower;
         public string[] sceneNames;
+        public bool isCameraMinimized;
 
         private int currentLevel = 0;
         private CameraController gardenCameraController;
         private CameraController playgroundCameraController;
-        private bool isCameraMinimized;
         private float aspectRatio;
         private GameObject levelStart;
         private GameObject levelEnd;
@@ -149,6 +149,7 @@ namespace Assets.Scripts
             player = null;
             cf.gameObject.AddComponent<MouseFollower>();
             dummieCaliflowerRB = cf.gameObject.AddComponent<Rigidbody2D>();
+            dummieCaliflowerRB.freezeRotation = true;
             isCarried = true;
         }
     }
