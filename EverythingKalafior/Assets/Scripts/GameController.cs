@@ -70,6 +70,9 @@ namespace Assets.Scripts
 
         void Update()
         {
+            if ( Input.GetKeyDown(KeyCode.R) )
+                LoadLevel(sceneNames[currentLevel]);
+
             if (win) {
                 winTex.transform.position = GetCamPos();
                 winTex.GetComponent<SpriteRenderer>().enabled = true;
