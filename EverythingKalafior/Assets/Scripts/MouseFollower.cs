@@ -7,16 +7,31 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class MouseFollower : MonoBehaviour
-    {
-        public Camera relativeCamera;
+    public class MouseFollower : MonoBehaviour {
+        private Rigidbody2D rb;
+        private GameObject gj;
+        
+        private void Start() {
+            gj = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+            activate();
+        }
 
-        public void FollowMouse(Rigidbody2D rb)
-        {
-            if (rb != null && relativeCamera != null)
-            {
-                rb.MovePosition(Vector3.Lerp(rb.position, relativeCamera.ScreenToWorldPoint(Input.mousePosition), 0.25f));
+        public void activate() {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        public void Update() {
+            var bounds = CameraExtensions.OrthographicBounds(new Vector3(-1.2f, -1.2f, 999));
+            var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+
+            var npos = gj.transform.position + move * Time.deltaTime * Mathf.PI;
+
+            if (!GameController.GetInstance().isCameraMinimized || !bounds.Contains(npos)) {
+                return;
             }
+
+            gj.transform.position = npos;
+            rb.MovePosition(gj.transform.position);
         }
     }
 }

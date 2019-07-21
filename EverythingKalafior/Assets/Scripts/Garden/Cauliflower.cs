@@ -8,6 +8,16 @@ public class Cauliflower : MonoBehaviour {
     private bool floating = false;
     public GameObject indicator;
     private GardenIndicator gardenIndicator;
+
+    private Vector3 dir = Vector3.right;
+    public void SetDir(Vector3 f) {
+        dir = f;
+    }
+
+    public Vector3 GetDir() {
+        return dir;
+    }
+    
     public void SetListener(GardenIndicator gi) {
         gardenIndicator = gi;
     }

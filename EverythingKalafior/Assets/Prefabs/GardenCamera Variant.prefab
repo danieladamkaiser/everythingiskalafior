@@ -72,35 +72,5 @@ PrefabInstance:
       propertyPath: m_projectionMatrixMode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9052457791539013121, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: robakTimeout
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052457790577821896, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: robakTimeout
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052457791802530636, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: robakTimeout
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052457791456339830, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: robakTimeout
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8286517104453440274, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.098
-      objectReference: {fileID: 0}
-    - target: {fileID: 8286517104453440274, guid: bbf510193a283824a92d8b28b0f73fa9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.225
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf510193a283824a92d8b28b0f73fa9, type: 3}

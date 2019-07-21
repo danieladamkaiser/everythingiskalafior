@@ -65,6 +65,8 @@
         <e p="Scripts" t="Include">
           <e p="AnimationMoveControll.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
+          <e p="CameraExtensions.cs" t="Include" />
+          <e p="Enabler.cs" t="Include" />
           <e p="Enums" t="Include">
             <e p="InputType.cs" t="Include" />
             <e p="KeyStatus.cs" t="Include" />
@@ -88,6 +90,7 @@
           <e p="MouseFollower.cs" t="Include" />
           <e p="PlayableCauliflower.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Rozsierdzony.cs" t="Include" />
           <e p="SafetyBox.cs" t="Include" />
           <e p="Seeds.cs" t="Include" />
           <e p="Serializable" t="Include">

@@ -18,7 +18,7 @@ namespace Assets.Scripts
         public BoxCollider2D SafetyCollider;
         public GameObject Player;
         public TextMeshProUGUI tmp;
-
+        public GameObject winTex;
         private int currentLevel = 0;
         private CameraController gardenCameraController;
         private CameraController playgroundCameraController;
@@ -28,9 +28,10 @@ namespace Assets.Scripts
 
         private Rigidbody2D dummieCaliflowerRB;
         private Cauliflower cauliflower;
-        private bool isCarried;
 
         private static GameController instance;
+
+        private bool win = false;
 
         void Awake()
         {
@@ -43,10 +44,10 @@ namespace Assets.Scripts
             var playground = Instantiate(PlaygroundPrefab, new Vector3(0, 0, -1), Quaternion.identity);
             var playGroundCamera = GameObject.Find("PlayGroundCamera").GetComponent<Camera>();
             playgroundCameraController = playGroundCamera.GetComponent<CameraController>();
-            mouseFollower.relativeCamera = playGroundCamera;
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
+            DontDestroyOnLoad(winTex);
             tmp = GameObject.Find("SeedCounter").GetComponent<TextMeshProUGUI>();
         }
 
@@ -55,9 +56,10 @@ namespace Assets.Scripts
             return instance;
         }
 
-        public Vector3 GetCamPos()
-        {
-            return playgroundCameraController.transform.position;
+        public Vector3 GetCamPos() {
+            var pos = playgroundCameraController.transform.position;
+            pos.z = 0;
+            return pos;
         }
 
         void Start()
@@ -68,6 +70,17 @@ namespace Assets.Scripts
 
         void Update()
         {
+            if (win) {
+                winTex.transform.position = GetCamPos();
+                winTex.GetComponent<SpriteRenderer>().enabled = true;
+                if (Input.GetKeyDown(KeyCode.Return)) {
+                    win = false;
+                    winTex.GetComponent<SpriteRenderer>().enabled = false;
+                    LoadLevel(sceneNames[++currentLevel]);
+                }
+                return;
+            }
+            
             tmp.text = Seeds.Count().ToString();
 
             if (levelStart==null || levelEnd == null)
@@ -86,24 +99,19 @@ namespace Assets.Scripts
                 }
             }
 
-            if (isCarried)
+            if (cauliflower && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0)))
             {
-                mouseFollower.FollowMouse(dummieCaliflowerRB);
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0))
-                {
-                    isCarried = false;
-                    SpawnPlayer();
-                    Player.GetComponent<PlayerController>().WakeUp();
-                    cauliflower?.OnThrow();
-                    cauliflower = null;
-                }
+                SpawnPlayer();
+                Player.GetComponent<PlayerController>().WakeUp();
+                cauliflower.OnThrow();
+                cauliflower = null;
             }
 
             if (Player != null)
             {
-                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 0.2f)
-                {
-                    LoadLevel(sceneNames[++currentLevel]);
+                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 0.3f) {
+                    win = true;
+                    Player.GetComponent<PlayerController>().Die();
                 }
             }
         }
@@ -112,6 +120,7 @@ namespace Assets.Scripts
         {
             Player = Instantiate(PlayerPrefab, cauliflower.transform.position, cauliflower.transform.rotation);
             playgroundCameraController.SetTarget(Player);
+            Player.GetComponent<PlayerController>().dir = cauliflower.GetDir();
         }
 
         private void MaximizeCamera()
@@ -175,7 +184,7 @@ namespace Assets.Scripts
             dummieCaliflowerRB = cf.gameObject.AddComponent<Rigidbody2D>();
             dummieCaliflowerRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             dummieCaliflowerRB.freezeRotation = true;
-            isCarried = true;
+            dummieCaliflowerRB.gravityScale = 0;
         }
     }
 }

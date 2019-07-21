@@ -21,8 +21,10 @@ namespace Assets.Scripts
         private bool isActive;
         private bool isDead;
         private float playerSpeed;
-        private bool canJump;
+        private bool canJump = false;
         private float jumpTolerance = 0.01f;
+
+        public Vector3 dir = Vector3.right;
 
         public void Awake()
         {
@@ -79,7 +81,7 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (isActive && GameController.GetInstance().isCameraMinimized)
+            if (isActive )
             {
                 Move();
             } 
@@ -87,14 +89,14 @@ namespace Assets.Scripts
 
         private void Move()
         {
-            Walk(input.GetHorizontalAxisValue());
+            Walk(dir.x);
 
-            if (input.GetKeyStatus(Keys.Jump) == KeyStatus.JustDown)
+            if (dir == Vector3.up)
             {
                 Jump();
             }
 
-            if (input.GetKeyStatus(Keys.Die) == KeyStatus.JustDown)
+            if (input.GetKeyStatus(Keys.Die) == KeyStatus.JustDown) // ?
             {
                 Die();
             }

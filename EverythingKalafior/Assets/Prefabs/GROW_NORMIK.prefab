@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7b41e99f465234bab16201eef8e75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growTime: 5
+  growTime: 2
   indicator: {fileID: 6947347897256668119}
 --- !u!58 &2039022123312803347
 CircleCollider2D:

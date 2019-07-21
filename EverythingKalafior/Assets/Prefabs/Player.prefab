@@ -125,9 +125,10 @@ MonoBehaviour:
     Actions: 
   PlayerConfig:
     MoveSpeed: 5
-    JumpForce: 6
+    JumpForce: 8
     inputType: 1
   PlatformCollider: {fileID: 1504576982455131582}
+  dir: {x: 1, y: 0, z: 0}
 --- !u!95 &438185664
 Animator:
   serializedVersion: 3
