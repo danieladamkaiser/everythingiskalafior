@@ -128,7 +128,7 @@ namespace Assets.Scripts
 
             if (Player != null)
             {
-                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 0.3f) {
+                if (levelEnd!=null && Vector2.Distance(Player.transform.position, levelEnd.transform.position) < 0.5f) {
                     win = true;
                     Player.GetComponent<PlayerController>().Die();
                 }
