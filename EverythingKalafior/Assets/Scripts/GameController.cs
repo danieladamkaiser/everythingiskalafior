@@ -19,6 +19,7 @@ namespace Assets.Scripts
         public GameObject Player;
         public TextMeshProUGUI tmp;
         public GameObject winTex;
+        public GameObject ultimatewin;
         private int currentLevel = 0;
         private CameraController gardenCameraController;
         private CameraController playgroundCameraController;
@@ -48,6 +49,7 @@ namespace Assets.Scripts
             DontDestroyOnLoad(garden);
             DontDestroyOnLoad(playground);
             DontDestroyOnLoad(winTex);
+            DontDestroyOnLoad(ultimatewin);
             tmp = GameObject.Find("SeedCounter").GetComponent<TextMeshProUGUI>();
         }
 
@@ -68,19 +70,33 @@ namespace Assets.Scripts
             LoadLevel(sceneNames[currentLevel]);
         }
 
+        void winwinSituation() {
+            GameObject txt = ultimatewin;
+            if (currentLevel == sceneNames.Length - 1) {
+                txt = ultimatewin;
+                currentLevel = -1;
+            } 
+            
+            if (currentLevel != -1) {
+                txt = winTex;
+            }
+                
+            txt.transform.position = GetCamPos();
+            txt.GetComponent<SpriteRenderer>().enabled = true;
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                win = false;
+                txt.GetComponent<SpriteRenderer>().enabled = false;
+                LoadLevel(sceneNames[++currentLevel]);
+            }
+        }
+
         void Update()
         {
             if ( Input.GetKeyDown(KeyCode.R) )
                 LoadLevel(sceneNames[currentLevel]);
 
             if (win) {
-                winTex.transform.position = GetCamPos();
-                winTex.GetComponent<SpriteRenderer>().enabled = true;
-                if (Input.GetKeyDown(KeyCode.Return)) {
-                    win = false;
-                    winTex.GetComponent<SpriteRenderer>().enabled = false;
-                    LoadLevel(sceneNames[++currentLevel]);
-                }
+                winwinSituation();
                 return;
             }
             

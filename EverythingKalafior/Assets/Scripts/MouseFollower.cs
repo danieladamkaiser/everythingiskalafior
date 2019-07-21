@@ -20,7 +20,7 @@ namespace Assets.Scripts
             rb = GetComponent<Rigidbody2D>();
         }
 
-        public void Update() {
+        public void FixedUpdate() {
             var bounds = CameraExtensions.OrthographicBounds(new Vector3(-1.2f, -1.2f, 999));
             var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 

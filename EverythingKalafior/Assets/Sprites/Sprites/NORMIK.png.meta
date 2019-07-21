@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 6106235694694351401
     second: NORMIK 5
+  - first:
+      213: -7933774637166497305
+    second: NORMIK_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,8 +101,8 @@ TextureImporter:
         y: 383
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -119,8 +122,8 @@ TextureImporter:
         y: 383
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,8 +143,8 @@ TextureImporter:
         y: 383
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,8 +164,8 @@ TextureImporter:
         y: 254
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,8 +185,8 @@ TextureImporter:
         y: 254
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,8 +206,8 @@ TextureImporter:
         y: 254
         width: 129
         height: 129
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,6 +215,27 @@ TextureImporter:
       bones: []
       spriteID: 3c390aa8995ad254b9923d435fbad5c7
       internalID: 6106235694694351401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NORMIK_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 168
+        width: 461
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046810d167c2092498c4044c44a727b6
+      internalID: -7933774637166497305
       vertices: []
       indices: 
       edges: []
