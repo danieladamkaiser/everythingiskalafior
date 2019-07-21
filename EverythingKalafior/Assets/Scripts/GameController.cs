@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEditorInternal;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
